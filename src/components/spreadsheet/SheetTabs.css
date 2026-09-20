@@ -1,0 +1,101 @@
+/* Sheet Tabs Styles */
+
+.sheet-tabs {
+  display: flex;
+  align-items: stretch;
+  background-color: var(--mm-neutral-50);
+  border-bottom: 1px solid var(--mm-surface-border-strong);
+  padding: 0 var(--mm-space-2);
+  height: 36px;
+  flex-shrink: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.sheet-tabs__list {
+  display: flex;
+  align-items: stretch;
+  gap: 2px;
+  flex: 1;
+}
+
+.sheet-tabs__tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--mm-space-1);
+  padding: 0 var(--mm-space-4);
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: var(--mm-radius-md) var(--mm-radius-md) 0 0;
+  background-color: var(--mm-neutral-100);
+  color: var(--mm-text-secondary);
+  font-size: var(--mm-text-sm);
+  font-weight: var(--mm-font-medium);
+  cursor: pointer;
+  transition: all var(--mm-transition-fast);
+  white-space: nowrap;
+  min-height: 35px;
+  position: relative;
+  bottom: -1px;
+}
+
+.sheet-tabs__tab:hover:not(.sheet-tabs__tab--active) {
+  background-color: var(--mm-surface-hover);
+  color: var(--mm-text-primary);
+}
+
+.sheet-tabs__tab--active {
+  background-color: var(--mm-surface);
+  color: var(--mm-text-primary);
+  border-color: var(--mm-surface-border-strong);
+  border-bottom-color: var(--mm-surface);
+  font-weight: var(--mm-font-semibold);
+}
+
+.sheet-tabs__tab--active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--mm-primary);
+}
+
+.sheet-tabs__tab-name {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sheet-tabs__protected-icon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--mm-warning);
+}
+
+.sheet-tabs__add-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  min-width: 32px;
+  border: 1px solid var(--mm-surface-border);
+  border-left: 1px solid var(--mm-surface-border-strong);
+  border-radius: 0;
+  background-color: var(--mm-neutral-100);
+  color: var(--mm-text-tertiary);
+  cursor: pointer;
+  transition: all var(--mm-transition-fast);
+}
+
+.sheet-tabs__add-btn:hover {
+  background-color: var(--mm-surface-hover);
+  color: var(--mm-text-primary);
+}
+
+.sheet-tabs__add-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--mm-focus-ring);
+}

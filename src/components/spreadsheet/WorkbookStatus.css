@@ -1,0 +1,79 @@
+/* Workbook Status Bar Styles */
+
+.workbook-status {
+  display: flex;
+  align-items: center;
+  gap: var(--mm-space-4);
+  padding: var(--mm-space-2) var(--mm-space-4);
+  background-color: var(--mm-neutral-50);
+  border-bottom: 1px solid var(--mm-surface-border);
+  font-size: var(--mm-text-xs);
+  color: var(--mm-text-tertiary);
+  flex-shrink: 0;
+  overflow-x: auto;
+}
+
+.workbook-status__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--mm-space-1);
+  white-space: nowrap;
+}
+
+.workbook-status__label {
+  font-weight: var(--mm-font-medium);
+  color: var(--mm-text-tertiary);
+}
+
+.workbook-status__value {
+  color: var(--mm-text-primary);
+  font-weight: var(--mm-font-normal);
+}
+
+.workbook-status--error {
+  display: flex;
+  align-items: center;
+  gap: var(--mm-space-3);
+  padding: var(--mm-space-3) var(--mm-space-4);
+  background-color: var(--mm-error-light);
+  color: var(--mm-error);
+  border-bottom: 1px solid var(--mm-error);
+}
+
+.workbook-status--error .workbook-status__icon {
+  flex-shrink: 0;
+}
+
+.workbook-status__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.workbook-status__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.workbook-status__title {
+  font-weight: var(--mm-font-semibold);
+  margin-bottom: 2px;
+}
+
+.workbook-status__message {
+  font-size: var(--mm-text-sm);
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .workbook-status {
+    gap: var(--mm-space-2);
+    padding: var(--mm-space-1) var(--mm-space-3);
+    font-size: 11px;
+  }
+
+  .workbook-status__item {
+    gap: 2px;
+  }
+}

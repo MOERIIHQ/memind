@@ -1,0 +1,118 @@
+/* File Dropzone Styles */
+
+.dropzone {
+  position: relative;
+  border: 2px dashed var(--mm-surface-border-strong);
+  border-radius: var(--mm-radius-xl);
+  background-color: var(--mm-surface);
+  transition: all var(--mm-transition-normal);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.dropzone:hover {
+  border-color: var(--mm-primary);
+  background-color: var(--mm-neutral-50);
+}
+
+.dropzone:focus-within {
+  outline: none;
+  border-color: var(--mm-primary);
+  box-shadow: var(--mm-focus-ring);
+}
+
+.dropzone--dragging {
+  border-color: var(--mm-primary);
+  background-color: var(--mm-primary-light);
+  transform: scale(1.02);
+}
+
+.dropzone__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.dropzone__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--mm-space-3);
+  padding: var(--mm-space-8);
+  text-align: center;
+}
+
+.dropzone__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  color: var(--mm-text-quaternary);
+}
+
+.dropzone--dragging .dropzone__icon {
+  color: var(--mm-primary);
+}
+
+.dropzone__title {
+  font-size: var(--mm-text-lg);
+  font-weight: var(--mm-font-semibold);
+  color: var(--mm-text-primary);
+  margin: 0;
+}
+
+.dropzone__description {
+  font-size: var(--mm-text-sm);
+  color: var(--mm-text-tertiary);
+  margin: 0;
+  max-width: 360px;
+}
+
+.dropzone__formats {
+  font-size: var(--mm-text-xs);
+  color: var(--mm-text-quaternary);
+  margin: 0;
+}
+
+.dropzone__error {
+  display: flex;
+  align-items: center;
+  gap: var(--mm-space-1);
+  font-size: var(--mm-text-sm);
+  color: var(--mm-error);
+  background-color: var(--mm-error-light);
+  padding: var(--mm-space-2) var(--mm-space-3);
+  border-radius: var(--mm-radius-md);
+  margin: 0;
+  width: 100%;
+  max-width: 360px;
+}
+
+.dropzone__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(37, 99, 235, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--mm-text-lg);
+  font-weight: var(--mm-font-semibold);
+  color: var(--mm-primary);
+  border-radius: var(--mm-radius-xl);
+  pointer-events: none;
+}
+
+.dropzone__button-label {
+  cursor: pointer;
+  display: inline-flex;
+}

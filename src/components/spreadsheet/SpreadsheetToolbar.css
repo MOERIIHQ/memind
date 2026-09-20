@@ -1,0 +1,101 @@
+/* Spreadsheet Toolbar Styles */
+
+.spreadsheet-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--mm-space-4);
+  padding: var(--mm-space-3) var(--mm-space-4);
+  background-color: var(--mm-surface);
+  border-bottom: 1px solid var(--mm-surface-border);
+  flex-shrink: 0;
+}
+
+.spreadsheet-toolbar__left {
+  display: flex;
+  align-items: center;
+  gap: var(--mm-space-3);
+  flex-shrink: 0;
+}
+
+.spreadsheet-toolbar__upload-label {
+  cursor: pointer;
+  display: inline-flex;
+}
+
+.spreadsheet-toolbar__file-info {
+  display: flex;
+  align-items: center;
+  gap: var(--mm-space-2);
+  flex-wrap: wrap;
+}
+
+.spreadsheet-toolbar__file-name {
+  font-size: var(--mm-text-sm);
+  font-weight: var(--mm-font-medium);
+  color: var(--mm-text-primary);
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.spreadsheet-toolbar__sheet-badge {
+  font-size: var(--mm-text-xs);
+  font-weight: var(--mm-font-medium);
+  color: var(--mm-text-tertiary);
+  background-color: var(--mm-neutral-100);
+  border: 1px solid var(--mm-surface-border);
+  border-radius: var(--mm-radius-full);
+  padding: 2px 8px;
+}
+
+.spreadsheet-toolbar__center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.spreadsheet-toolbar__cell-address {
+  display: flex;
+  align-items: center;
+  gap: var(--mm-space-1);
+  background-color: var(--mm-neutral-100);
+  border: 1px solid var(--mm-surface-border);
+  border-radius: var(--mm-radius-sm);
+  padding: 2px 8px;
+}
+
+.spreadsheet-toolbar__cell-label {
+  font-size: var(--mm-text-xs);
+  color: var(--mm-text-tertiary);
+}
+
+.spreadsheet-toolbar__cell-value {
+  font-family: var(--mm-font-mono);
+  font-size: var(--mm-text-sm);
+  font-weight: var(--mm-font-medium);
+  color: var(--mm-text-primary);
+}
+
+.spreadsheet-toolbar__right {
+  display: flex;
+  align-items: center;
+  gap: var(--mm-space-1);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .spreadsheet-toolbar {
+    padding: var(--mm-space-2) var(--mm-space-3);
+    gap: var(--mm-space-2);
+  }
+
+  .spreadsheet-toolbar__file-name {
+    max-width: 120px;
+  }
+
+  .spreadsheet-toolbar__center {
+    display: none;
+  }
+}

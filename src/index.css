@@ -1,0 +1,75 @@
+@import './styles/theme.css';
+@import './styles/components.css';
+@import './components/Button.css';
+@import './components/Card.css';
+@import './components/Sidebar.css';
+@import './components/Header.css';
+@import './pages/Dashboard.css';
+@import './pages/PlaceholderPage.css';
+@import './pages/Spreadsheet.css';
+@import './components/spreadsheet/SpreadsheetGrid.css';
+@import './components/spreadsheet/FileDropzone.css';
+@import './components/spreadsheet/SheetTabs.css';
+@import './components/spreadsheet/SpreadsheetToolbar.css';
+@import './components/spreadsheet/WorkbookStatus.css';
+@import './components/spreadsheet/CellEditor.css';
+
+/* Global app layout */
+.app {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.app-main {
+  flex: 1;
+  margin-left: var(--mm-sidebar-width);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left var(--mm-transition-normal);
+  background-color: var(--mm-neutral-50);
+}
+
+.sidebar--collapsed + .app-main {
+  margin-left: var(--mm-sidebar-collapsed-width);
+}
+
+@media (max-width: 768px) {
+  .app-main {
+    margin-left: 0;
+  }
+
+  .sidebar--collapsed + .app-main {
+    margin-left: 0;
+  }
+}
+
+.app-content {
+  flex: 1;
+  padding: var(--mm-space-6);
+  width: 100%;
+  max-width: var(--mm-content-max-width);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .app-content {
+    padding: var(--mm-space-4);
+  }
+}
+
+/* Utility classes for page containers */
+.page-container {
+  width: 100%;
+  max-width: var(--mm-content-max-width);
+  margin: 0 auto;
+  padding: var(--mm-space-6);
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: var(--mm-space-4);
+  }
+}
