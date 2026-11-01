@@ -227,6 +227,21 @@ class CoreExcelEngine:
             info.sheets.append(self._worksheet_to_sheetdata(self._wb[name]))  # type: ignore[union-attr]
         return info
 
+    def is_sheet_protected(self, sheet_name: str) -> bool:
+        """Check if a sheet has sheet protection enabled.
+        Returns True if the sheet is protected, False otherwise."""
+        self._ensure_loaded()
+        if sheet_name not in self._wb.sheetnames:  # type: ignore[union-attr]
+            raise ExcelError(
+                f"Sheet not found: {sheet_name}",
+                ExcelErrorCode.SHEET_NOT_FOUND,
+                {"sheet_name": sheet_name},
+            )
+        ws = self._wb[sheet_name]  # type: ignore[union-attr]
+        if hasattr(ws, 'protection'):
+            return bool(ws.protection.sheet)  # type: ignore[union-attr]
+        return False
+
     # -----------------------------------------------------------------------
     # MODIFY
     # -----------------------------------------------------------------------

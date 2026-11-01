@@ -30,3 +30,32 @@ __pycache__/
 *.njsproj
 *.sln
 *.sw?
+
+# Environment files (secrets - never commit)
+.env
+.env.*
+!.env.example
+
+# MIND-070 test state
+.mind070e_teststate/
+
+# MIND-070 workflow state
+.memind/
+
+# Database runtime
+*.db
+*.sqlite
+*.sqlite3
+
+# Backup files
+*.bak
+
+# Temp files
+*.tmp
+*.temp
+
+# Local backup copies of .gitignore (never commit)
+.gitignore.bak*
+
+# Local audit backup files (never commit)
+.gitignore.audit_backup*
